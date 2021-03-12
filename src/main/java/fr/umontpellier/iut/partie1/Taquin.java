@@ -34,9 +34,24 @@ public class Taquin {
 
     // retourne un tableau [i,j] si tableau[i][j]==0
     public int[] trouverTrou() {
-        throw new RuntimeException("Méthode non implémentée ! Effacez cette ligne et écrivez le code nécessaire");
-    }
+        int n = 0;
+        int [] tab = new int [2];
+        for (int i = 0; i < tableau.length; i++) {
+            for (int j = 0; j < tableau[i].length; j++) {
+                int res = tableau[i][j];
+                if(res == 0){
+                    tab[0] = i;
+                    tab[1] = j;
+                    return(tab);
 
+                }
+
+            }
+        }
+    int[] tab2 = new int[1];
+        tab2[0] = -1;
+        return tab2;
+    }
 
     @Override
     public String toString() {
