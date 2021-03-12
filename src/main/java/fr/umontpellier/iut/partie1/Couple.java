@@ -22,7 +22,9 @@ public class Couple {
         Couple temp = this;
         while(temp.predecesseur != null){
             List.add(0,temp.taquin);
+            temp = temp.predecesseur;
         }
+        List.add(0,temp.taquin);
        return(List);
 
     }
