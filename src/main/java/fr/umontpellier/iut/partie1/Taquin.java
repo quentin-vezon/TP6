@@ -29,7 +29,40 @@ public class Taquin {
     }
 
     public ArrayList<Taquin> genererFils() {
-        throw new RuntimeException("Méthode non implémentée ! Effacez cette ligne et écrivez le code nécessaire");
+
+       int[] TrouXY = trouverTrou();
+       int x = TrouXY[0];
+       int y = TrouXY[1];
+       ArrayList<Taquin> List = new ArrayList<>();
+
+       if(x > 0){
+           int[][] Copiertab = new int[x][y];
+           Copiertab[x][y] = Copiertab[x-1][y];
+           Copiertab[x-1][y]=0;
+           List.add(new Taquin(Copiertab));
+       }
+
+        if(x < tableau.length - 1){
+            int[][] Copiertab = new int[x][y];
+            Copiertab[x][y] = Copiertab[x+1][y];
+            Copiertab[x+1][y]=0;
+            List.add(new Taquin(Copiertab));
+        }
+
+        if(y > 0){
+            int[][] Copiertab = new int[x][y];
+            Copiertab[x][y] = Copiertab[x][y-1];
+            Copiertab[x][y-1]=0;
+            List.add(new Taquin(Copiertab));
+        }
+
+        if(y < tableau[x].length - 1){
+            int[][] Copiertab = new int[x][y];
+            Copiertab[x][y] = Copiertab[x][y+1];
+            Copiertab[x][y+1]=0;
+            List.add(new Taquin(Copiertab));
+        }
+        return List;
     }
 
     // retourne un tableau [i,j] si tableau[i][j]==0
