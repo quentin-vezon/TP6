@@ -19,6 +19,7 @@ public class Taquin {
                     return true;
                     }
                 else if(res != n) {
+                    return false;
                 }
                 else {
                     n += 1;

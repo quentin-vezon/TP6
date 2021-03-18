@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TaquinTest {
-    @Disabled
+   // @Disabled
     @Test
     public void test_est_gagnant_faux_3_X_3() {
         int[][] data = {{1, 2, 0}, {4, 5, 3}, {7, 8, 6}};
@@ -16,7 +16,7 @@ class TaquinTest {
         assertFalse(t.estGagnant());
     }
 
-    @Disabled
+  //  @Disabled
     @Test
     public void test_trouver_trou_coin_hd_3_X_3() {
         int[][] data = {{1, 2, 0}, {4, 5, 3}, {7, 8, 6}};
@@ -26,7 +26,7 @@ class TaquinTest {
         assertArrayEquals(res2, res);
     }
 
-    @Disabled
+   // @Disabled
     @Test
     public void test_equals_vrai_3_X_3() {
         int[][] data = {{1, 2, 0}, {4, 5, 3}, {7, 8, 6}};
@@ -36,7 +36,7 @@ class TaquinTest {
         assertEquals(t, t2);
     }
 
-    @Disabled
+   // @Disabled
     @Test
     public void test_generer_Fils_coin_3_X_3() {
         int[][] data = {{1, 2, 0}, {4, 5, 3}, {7, 8, 6}};
