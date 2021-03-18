@@ -10,10 +10,14 @@ public class Contexte {
     public Contexte(Taquin taquinInitial) {
         this.taquinInitial = taquinInitial;
         solution = new ArrayList<>();
+
     }
 
     public void resoudre() {
-        throw new RuntimeException("Méthode non implémentée ! Effacez cette ligne et écrivez le code nécessaire");
+
+
+
+
     }
 
     public ArrayList<Taquin> getSolution() {
