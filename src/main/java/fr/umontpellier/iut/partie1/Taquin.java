@@ -11,7 +11,7 @@ public class Taquin {
     }
 
     public boolean estGagnant() {
-        int n = 0;
+        int n = 1;
         for(int i =0; i < tableau.length; i++){
             for(int j = 0; j < tableau[i].length; j++){
                 int res = tableau[i][j];
@@ -37,28 +37,28 @@ public class Taquin {
        ArrayList<Taquin> List = new ArrayList<>();
 
        if(x > 0){
-           int[][] Copiertab = new int[x][y];
+           int[][] Copiertab = this.CopieTab();
            Copiertab[x][y] = Copiertab[x-1][y];
            Copiertab[x-1][y]=0;
            List.add(new Taquin(Copiertab));
        }
 
         if(x < tableau.length - 1){
-            int[][] Copiertab = new int[x][y];
+            int[][] Copiertab = this.CopieTab();
             Copiertab[x][y] = Copiertab[x+1][y];
             Copiertab[x+1][y]=0;
             List.add(new Taquin(Copiertab));
         }
 
         if(y > 0){
-            int[][] Copiertab = new int[x][y];
+            int[][] Copiertab = this.CopieTab();
             Copiertab[x][y] = Copiertab[x][y-1];
             Copiertab[x][y-1]=0;
             List.add(new Taquin(Copiertab));
         }
 
         if(y < tableau[x].length - 1){
-            int[][] Copiertab = new int[x][y];
+            int[][] Copiertab = this.CopieTab();
             Copiertab[x][y] = Copiertab[x][y+1];
             Copiertab[x][y+1]=0;
             List.add(new Taquin(Copiertab));
@@ -66,6 +66,17 @@ public class Taquin {
         return List;
     }
 
+    private int[][] CopieTab(){
+        int [][] tab = new int[this.tableau.length][this.tableau[0].length];
+        for(int i=0; i< tableau.length; i++){
+            for(int j=0; j< tableau[i].length; j++){
+                tab[i][j] = tableau[i][j];
+            }
+        }
+        return tab;
+
+
+    }
     // retourne un tableau [i,j] si tableau[i][j]==0
     public int[] trouverTrou() {
         int n = 0;
@@ -89,16 +100,18 @@ public class Taquin {
 
     @Override
     public String toString() {
-        String res = "+-----------+\n";
-        String sres = res;
-        for( int n = 0; n < tableau.length; n++){
-            for (int p = 0; p < tableau[n].length; p++){
-                int tab = tableau[n][p];
-                sres += p == 0 ? "| " + tab :(p+1 == tableau[n].length ? " " + tab + " |\n" : " ");
+        String chaine = "";
+        for (int i = 0; i < tableau.length; i++) {
+            chaine += "|";
+            for (int j = 0; j < tableau[i].length; j++) {
+                if (tableau[i][j] < 10) {
+                    chaine += " 0" + tableau[i][j];
+                } else
+                    chaine += " " + tableau[i][j];
             }
+            chaine += " |\n";
         }
-        sres += res;
-        return sres;
+        return chaine;
     }
 
 

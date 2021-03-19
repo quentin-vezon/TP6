@@ -14,8 +14,10 @@ public class Couple {
 
     public void mettreAJour(ArrayList<Couple> frontiere, ArrayList<Taquin> dejaVus) {
         ArrayList<Taquin> t = this.taquin.genererFils();
+
+
         for(int i=0; i < t.size(); i++){
-            if(dejaVus.contains(t.get(i))){
+            if(!dejaVus.contains(t.get(i))){
                 dejaVus.add(t.get(i));
                 frontiere.add(new Couple(t.get(i), this));
             }

@@ -13,4 +13,11 @@ class ContexteTest {
         Contexte c = new Contexte(new Taquin(data));
         assertDoesNotThrow(() -> c.resoudre());
     }
+
+    @Test
+    public void test_x2_y2() {
+        int[][] data = {{0, 1}, {2, 3}};
+        Contexte c2 = new Contexte (new Taquin(data));
+
+    }
 }
